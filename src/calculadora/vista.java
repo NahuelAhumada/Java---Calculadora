@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
+import java.awt.Font;
 
 public class vista extends JFrame {
 
@@ -47,81 +48,101 @@ public class vista extends JFrame {
 		
 		panel.setLayout(new GridLayout(5, 4, 0, 0));
 		
-		JButton btnNewButton_1 = new JButton("C");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton botonC = new JButton("C");
+		botonC.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		botonC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		panel.add(btnNewButton_1);
+		panel.add(botonC);
 		
-		JButton btnNewButton_2 = new JButton("\u221A");
-		panel.add(btnNewButton_2);
+		JButton botonRaiz = new JButton("\u221A");
+		botonRaiz.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(botonRaiz);
 		
-		JButton btnNewButton_7_3 = new JButton("/");
-		btnNewButton_7_3.addActionListener(new ActionListener() {
+		JButton botonDivision = new JButton("/");
+		botonDivision.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		botonDivision.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		panel.add(btnNewButton_7_3);
+		panel.add(botonDivision);
 		
-		JButton btnNewButton_7_8 = new JButton("CE");
-		panel.add(btnNewButton_7_8);
+		JButton botonCE = new JButton("CE");
+		botonCE.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(botonCE);
 		
-		JButton btnNewButton_3 = new JButton("7");
-		panel.add(btnNewButton_3);
+		JButton boton7 = new JButton("7");
+		boton7.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(boton7);
 		
-		JButton btnNewButton_4 = new JButton("8");
-		btnNewButton_4.addActionListener(new ActionListener() {
+		JButton boton8 = new JButton("8");
+		boton8.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		boton8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		panel.add(btnNewButton_4);
+		panel.add(boton8);
 		
-		JButton btnNewButton = new JButton("9");
-		panel.add(btnNewButton);
+		JButton boton9 = new JButton("9");
+		boton9.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(boton9);
 		
-		JButton btnNewButton_6 = new JButton("X");
-		panel.add(btnNewButton_6);
+		JButton botonMultiplicacion = new JButton("X");
+		botonMultiplicacion.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(botonMultiplicacion);
 		
-		JButton btnNewButton_7_1 = new JButton("4");
-		panel.add(btnNewButton_7_1);
+		JButton boton4 = new JButton("4");
+		boton4.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(boton4);
 		
-		JButton btnNewButton_5 = new JButton("5");
-		panel.add(btnNewButton_5);
+		JButton boton5 = new JButton("5");
+		boton5.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(boton5);
 		
-		JButton btnNewButton_7 = new JButton("6");
-		panel.add(btnNewButton_7);
+		JButton boton6 = new JButton("6");
+		boton6.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(boton6);
 		
-		JButton btnNewButton_7_2 = new JButton("-");
-		panel.add(btnNewButton_7_2);
+		JButton botonResta = new JButton("-");
+		botonResta.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(botonResta);
 		
-		JButton btnNewButton_7_5 = new JButton("1");
-		panel.add(btnNewButton_7_5);
+		JButton boton1 = new JButton("1");
+		boton1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(boton1);
 		
-		JButton btnNewButton_7_9 = new JButton("2");
-		panel.add(btnNewButton_7_9);
+		JButton boton2 = new JButton("2");
+		boton2.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(boton2);
 		
-		JButton btnNewButton_7_4 = new JButton("3");
-		panel.add(btnNewButton_7_4);
+		JButton boton3 = new JButton("3");
+		boton3.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(boton3);
 		
-		JButton btnNewButton_7_6 = new JButton("+");
-		panel.add(btnNewButton_7_6);
+		JButton botonSuma = new JButton("+");
+		botonSuma.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(botonSuma);
 		
-		JButton btnNewButton_7_7 = new JButton("+/-");
-		panel.add(btnNewButton_7_7);
+		JButton botonMasMenos = new JButton("+/-");
+		botonMasMenos.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(botonMasMenos);
 		
-		JButton btnNewButton_7_10 = new JButton("0");
-		panel.add(btnNewButton_7_10);
+		JButton boton0 = new JButton("0");
+		boton0.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(boton0);
 		
-		JButton btnNewButton_7_11 = new JButton(".");
-		panel.add(btnNewButton_7_11);
+		JButton botonPunto = new JButton(".");
+		botonPunto.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(botonPunto);
 		
-		JButton btnNewButton_7_12 = new JButton("=");
-		btnNewButton_7_12.addActionListener(new ActionListener() {
+		JButton botonIgual = new JButton("=");
+		botonIgual.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		botonIgual.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		panel.add(btnNewButton_7_12);
+		panel.add(botonIgual);
 		
 		
 	}
