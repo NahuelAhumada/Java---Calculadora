@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
 import java.awt.Font;
+import javax.swing.JLabel;
 
 public class vista extends JFrame {
 
@@ -143,6 +144,14 @@ public class vista extends JFrame {
 			}
 		});
 		panel.add(botonIgual);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(0, 35, 296, 70);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setBounds(0, 0, 296, 40);
+		contentPane.add(lblNewLabel_1);
 		
 		
 	}
