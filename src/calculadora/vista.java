@@ -91,10 +91,12 @@ public class vista extends JFrame {
 		panel.add(botonCE);
 		
 		JButton boton7 = new JButton("7");
+		boton7.setBackground(new Color(221, 221, 221));
 		boton7.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(boton7);
 		
 		JButton boton8 = new JButton("8");
+		boton8.setBackground(new Color(221, 221, 221));
 		boton8.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		boton8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -103,6 +105,7 @@ public class vista extends JFrame {
 		panel.add(boton8);
 		
 		JButton boton9 = new JButton("9");
+		boton9.setBackground(new Color(221, 221, 221));
 		boton9.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(boton9);
 		
@@ -111,14 +114,17 @@ public class vista extends JFrame {
 		panel.add(botonMultiplicacion);
 		
 		JButton boton4 = new JButton("4");
+		boton4.setBackground(new Color(221, 221, 221));
 		boton4.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(boton4);
 		
 		JButton boton5 = new JButton("5");
+		boton5.setBackground(new Color(221, 221, 221));
 		boton5.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(boton5);
 		
 		JButton boton6 = new JButton("6");
+		boton6.setBackground(new Color(221, 221, 221));
 		boton6.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(boton6);
 		
@@ -127,14 +133,17 @@ public class vista extends JFrame {
 		panel.add(botonResta);
 		
 		JButton boton1 = new JButton("1");
+		boton1.setBackground(new Color(221, 221, 221));
 		boton1.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(boton1);
 		
 		JButton boton2 = new JButton("2");
+		boton2.setBackground(new Color(221, 221, 221));
 		boton2.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(boton2);
 		
 		JButton boton3 = new JButton("3");
+		boton3.setBackground(new Color(221, 221, 221));
 		boton3.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(boton3);
 		
@@ -147,6 +156,7 @@ public class vista extends JFrame {
 		panel.add(botonMasMenos);
 		
 		JButton boton0 = new JButton("0");
+		boton0.setBackground(new Color(221, 221, 221));
 		boton0.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(boton0);
 		
