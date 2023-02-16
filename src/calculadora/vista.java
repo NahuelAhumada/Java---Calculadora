@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
 import java.awt.Font;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class vista extends JFrame {
 
@@ -35,6 +36,8 @@ public class vista extends JFrame {
 	 * Create the frame.
 	 */
 	public vista() {
+		this.setTitle("Calculadora");
+		this.setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 310, 464);
 		JPanel contentPane = new JPanel();
@@ -145,13 +148,17 @@ public class vista extends JFrame {
 		});
 		panel.add(botonIgual);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(0, 35, 296, 70);
-		contentPane.add(lblNewLabel);
+		JLabel labelNumero = new JLabel("0");
+		labelNumero.setFont(new Font("Tahoma", Font.PLAIN, 36));
+		labelNumero.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelNumero.setBounds(0, 35, 296, 70);
+		contentPane.add(labelNumero);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(0, 0, 296, 40);
-		contentPane.add(lblNewLabel_1);
+		JLabel labelCuentaRealizada = new JLabel("");
+		labelCuentaRealizada.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelCuentaRealizada.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		labelCuentaRealizada.setBounds(0, 0, 296, 40);
+		contentPane.add(labelCuentaRealizada);
 		
 		
 	}
