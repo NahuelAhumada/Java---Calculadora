@@ -66,11 +66,25 @@ public class vista extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
 		//JPanel para los numeros
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 104, 296, 323);
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(5, 4, 0, 0));
+		
+		//label para mostrar los numeros que se van escribiendo y el resultado de la cuenta
+		JLabel labelNumero = new JLabel("0");
+		labelNumero.setFont(new Font("Tahoma", Font.PLAIN, 36));
+		labelNumero.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelNumero.setBounds(0, 35, 296, 70);
+		contentPane.add(labelNumero);
+		//label para mostra la cuenta una vez que se realiza
+		JLabel labelCuentaRealizada = new JLabel("");
+		labelCuentaRealizada.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelCuentaRealizada.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		labelCuentaRealizada.setBounds(0, 0, 296, 40);
+		contentPane.add(labelCuentaRealizada);
 		
 		JButton botonC = new JButton("C");
 		botonC.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -96,65 +110,110 @@ public class vista extends JFrame {
 		botonCE.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(botonCE);
 		
+		//Boton numero 7
 		JButton boton7 = new JButton("7");
 		boton7.setBackground(new Color(221, 221, 221));
 		boton7.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		boton7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				agregarNumero(labelNumero, 7);
 			}
 		});
 		panel.add(boton7);
 		
+		//Boton 8
 		JButton boton8 = new JButton("8");
 		boton8.setBackground(new Color(221, 221, 221));
 		boton8.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		boton8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				agregarNumero(labelNumero, 8);
 			}
 		});
 		panel.add(boton8);
-		
+		//Boton 9
 		JButton boton9 = new JButton("9");
 		boton9.setBackground(new Color(221, 221, 221));
 		boton9.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		boton9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				agregarNumero(labelNumero, 9);
+			}
+		});
 		panel.add(boton9);
 		
 		JButton botonMultiplicacion = new JButton("X");
 		botonMultiplicacion.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(botonMultiplicacion);
 		
+		//Boton 4
 		JButton boton4 = new JButton("4");
 		boton4.setBackground(new Color(221, 221, 221));
 		boton4.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		boton4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				agregarNumero(labelNumero, 4);
+			}
+		});
 		panel.add(boton4);
 		
+		//Boton 5
 		JButton boton5 = new JButton("5");
 		boton5.setBackground(new Color(221, 221, 221));
 		boton5.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		boton5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				agregarNumero(labelNumero, 5);
+			}
+		});
 		panel.add(boton5);
 		
+		//Boton 6
 		JButton boton6 = new JButton("6");
 		boton6.setBackground(new Color(221, 221, 221));
 		boton6.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		boton6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				agregarNumero(labelNumero, 6);
+			}
+		});
 		panel.add(boton6);
 		
 		JButton botonResta = new JButton("-");
 		botonResta.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(botonResta);
 		
+		//Boton 1
 		JButton boton1 = new JButton("1");
 		boton1.setBackground(new Color(221, 221, 221));
 		boton1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		boton1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				agregarNumero(labelNumero, 1);
+			}
+		});
 		panel.add(boton1);
 		
+		//Boton 2
 		JButton boton2 = new JButton("2");
 		boton2.setBackground(new Color(221, 221, 221));
 		boton2.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		boton2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				agregarNumero(labelNumero, 2);
+			}
+		});
 		panel.add(boton2);
 		
+		//Boton 3
 		JButton boton3 = new JButton("3");
 		boton3.setBackground(new Color(221, 221, 221));
 		boton3.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		boton3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				agregarNumero(labelNumero, 3);
+			}
+		});
 		panel.add(boton3);
 		
 		JButton botonSuma = new JButton("+");
@@ -165,9 +224,15 @@ public class vista extends JFrame {
 		botonMasMenos.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(botonMasMenos);
 		
+		//Boton 0
 		JButton boton0 = new JButton("0");
 		boton0.setBackground(new Color(221, 221, 221));
 		boton0.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		boton0.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				agregarNumero(labelNumero, 0);
+			}
+		});
 		panel.add(boton0);
 		
 		JButton botonPunto = new JButton(".");
@@ -182,18 +247,16 @@ public class vista extends JFrame {
 		});
 		panel.add(botonIgual);
 		
-		JLabel labelNumero = new JLabel("0");
-		labelNumero.setFont(new Font("Tahoma", Font.PLAIN, 36));
-		labelNumero.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelNumero.setBounds(0, 35, 296, 70);
-		contentPane.add(labelNumero);
-		
-		JLabel labelCuentaRealizada = new JLabel("");
-		labelCuentaRealizada.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelCuentaRealizada.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		labelCuentaRealizada.setBounds(0, 0, 296, 40);
-		contentPane.add(labelCuentaRealizada);
-		
 		
 	}
+	private void agregarNumero(JLabel labelNumero, Integer numero) {
+		if(labelNumero.getText().equals("0")) {
+			cadenaNumeros = numero.toString();
+		}else {
+			cadenaNumeros += numero.toString();
+		}
+		labelNumero.setText(cadenaNumeros);
+		activado=true;
+	}
+	
 }
