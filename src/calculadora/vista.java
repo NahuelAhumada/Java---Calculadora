@@ -16,11 +16,18 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
 public class vista extends JFrame {
-	
+	//Variables de label para mostrar la operación matematica
+	private String cadenaNumeros = "";
+	private String operacion = "";
+	private double primerNumero, resultado;
+	private boolean activado = true;
+	private boolean punto = true; 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+		//Modelo de vista
 		try {
             //here you can put the selected theme class name in JTattoo
             UIManager.setLookAndFeel("com.jtattoo.plaf.graphite.GraphiteLookAndFeel");
@@ -56,14 +63,13 @@ public class vista extends JFrame {
 		setBounds(100, 100, 310, 464);
 		JPanel contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		//JPanel para los numeros
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 104, 296, 323);
 		contentPane.add(panel);
-		
 		panel.setLayout(new GridLayout(5, 4, 0, 0));
 		
 		JButton botonC = new JButton("C");
@@ -93,6 +99,10 @@ public class vista extends JFrame {
 		JButton boton7 = new JButton("7");
 		boton7.setBackground(new Color(221, 221, 221));
 		boton7.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		boton7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		panel.add(boton7);
 		
 		JButton boton8 = new JButton("8");
