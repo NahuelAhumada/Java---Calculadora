@@ -94,14 +94,27 @@ public class vista extends JFrame {
 		});
 		panel.add(botonC);
 		
+		//Boton de raiz
 		JButton botonRaiz = new JButton("\u221A");
 		botonRaiz.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		botonRaiz.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		panel.add(botonRaiz);
 		
-		JButton botonDivision = new JButton("/");
+		//Boton de division '/'
+		JButton botonDivision = new JButton("\u00F7");
 		botonDivision.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		botonDivision.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(activado) {
+					primerNumero = Double.parseDouble(cadenaNumeros);
+					labelCuentaRealizada.setText(cadenaNumeros + " \u00F7 ");
+					cadenaNumeros = "";
+					operacion = "division";
+					activado=false;
+				}
 			}
 		});
 		panel.add(botonDivision);
@@ -142,8 +155,20 @@ public class vista extends JFrame {
 		});
 		panel.add(boton9);
 		
+		//Boton de multiplicar X
 		JButton botonMultiplicacion = new JButton("X");
 		botonMultiplicacion.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		botonMultiplicacion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(activado) {
+					primerNumero = Double.parseDouble(cadenaNumeros);
+					labelCuentaRealizada.setText(cadenaNumeros + " X ");
+					cadenaNumeros = "";
+					operacion = "multiplicacion";
+					activado=false;
+				}
+			}
+		});
 		panel.add(botonMultiplicacion);
 		
 		//Boton 4
@@ -179,8 +204,20 @@ public class vista extends JFrame {
 		});
 		panel.add(boton6);
 		
+		//Boton de resta
 		JButton botonResta = new JButton("-");
 		botonResta.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		botonResta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(activado) {
+					primerNumero = Double.parseDouble(cadenaNumeros);
+					labelCuentaRealizada.setText(cadenaNumeros + " - ");
+					cadenaNumeros = "";
+					operacion = "resta";
+					activado=false;
+				}
+			}
+		});
 		panel.add(botonResta);
 		
 		//Boton 1
@@ -216,7 +253,19 @@ public class vista extends JFrame {
 		});
 		panel.add(boton3);
 		
+		//Boton de Suma (+)
 		JButton botonSuma = new JButton("+");
+		botonSuma.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(activado) {
+					primerNumero = Double.parseDouble(cadenaNumeros);
+					labelCuentaRealizada.setText(cadenaNumeros + " + ");
+					cadenaNumeros = "";
+					operacion = "suma";
+					activado=false;
+				}
+			}
+		});
 		botonSuma.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(botonSuma);
 		
@@ -239,10 +288,12 @@ public class vista extends JFrame {
 		botonPunto.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(botonPunto);
 		
+		//Boton de igual
 		JButton botonIgual = new JButton("=");
 		botonIgual.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		botonIgual.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				botonIgualActionPerformed(labelNumero,labelCuentaRealizada);
 			}
 		});
 		panel.add(botonIgual);
@@ -257,6 +308,17 @@ public class vista extends JFrame {
 		}
 		labelNumero.setText(cadenaNumeros);
 		activado=true;
+	}
+	private void botonIgualActionPerformed(JLabel labelNumero, JLabel labelCuentaRealizada) {
+		double segundoNumero;
+		if(operacion.equals("suma")) {
+			labelCuentaRealizada.setText(labelCuentaRealizada.getText() + cadenaNumeros);
+			segundoNumero = Double.parseDouble(cadenaNumeros);
+			resultado= primerNumero + segundoNumero;
+			labelNumero.setText(String.format("% .2f",resultado));
+			cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
+		}
 	}
 	
 }
