@@ -313,11 +313,17 @@ public class vista extends JFrame {
 		double segundoNumero;
 		if(operacion.equals("nula")) {
 			labelNumero.setText(cadenaNumeros);
-		}
-		else if(operacion.equals("suma")) {
+		}else if(operacion.equals("suma")) {
 			labelCuentaRealizada.setText(labelCuentaRealizada.getText() + cadenaNumeros);
 			segundoNumero = Double.parseDouble(cadenaNumeros);
 			resultado= primerNumero + segundoNumero;
+			labelNumero.setText(String.format("% .2f",resultado));
+			cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
+		}else if(operacion.equals("resta")) {
+			labelCuentaRealizada.setText(labelCuentaRealizada.getText() + cadenaNumeros);
+			segundoNumero = Double.parseDouble(cadenaNumeros);
+			resultado= primerNumero - segundoNumero;
 			labelNumero.setText(String.format("% .2f",resultado));
 			cadenaNumeros = String.valueOf(resultado);
             operacion = "nula";
