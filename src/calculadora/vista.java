@@ -18,7 +18,7 @@ import javax.swing.UIManager;
 public class vista extends JFrame {
 	//Variables de label para mostrar la operación matematica
 	private String cadenaNumeros = "";
-	private String operacion = "";
+	private String operacion = "nula";
 	private double primerNumero, resultado;
 	private boolean activado = true;
 	private boolean punto = true; 
@@ -311,7 +311,10 @@ public class vista extends JFrame {
 	}
 	private void botonIgualActionPerformed(JLabel labelNumero, JLabel labelCuentaRealizada) {
 		double segundoNumero;
-		if(operacion.equals("suma")) {
+		if(operacion.equals("nula")) {
+			labelNumero.setText(cadenaNumeros);
+		}
+		else if(operacion.equals("suma")) {
 			labelCuentaRealizada.setText(labelCuentaRealizada.getText() + cadenaNumeros);
 			segundoNumero = Double.parseDouble(cadenaNumeros);
 			resultado= primerNumero + segundoNumero;
@@ -319,6 +322,8 @@ public class vista extends JFrame {
 			cadenaNumeros = String.valueOf(resultado);
             operacion = "nula";
 		}
+		
+		activado=true;
 	}
 	
 }
