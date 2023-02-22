@@ -99,6 +99,13 @@ public class vista extends JFrame {
 		botonRaiz.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		botonRaiz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(activado) {
+					primerNumero = Double.parseDouble(cadenaNumeros);
+					labelCuentaRealizada.setText("sqrt("+cadenaNumeros+")");
+					resultado = Math.sqrt(primerNumero);
+					labelNumero.setText(String.format("%.2f", resultado));
+					cadenaNumeros = String.valueOf(resultado);
+				}
 			}
 		});
 		panel.add(botonRaiz);
