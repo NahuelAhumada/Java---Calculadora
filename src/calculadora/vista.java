@@ -327,6 +327,21 @@ public class vista extends JFrame {
 			labelNumero.setText(String.format("% .2f",resultado));
 			cadenaNumeros = String.valueOf(resultado);
             operacion = "nula";
+		}else if(operacion.equals("multiplicacion")) {
+			labelCuentaRealizada.setText(labelCuentaRealizada.getText() + cadenaNumeros);
+			segundoNumero = Double.parseDouble(cadenaNumeros);
+			resultado= primerNumero * segundoNumero;
+			labelNumero.setText(String.format("% .2f",resultado));
+			cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
+		}
+		else if(operacion.equals("division")) {
+			labelCuentaRealizada.setText(labelCuentaRealizada.getText() + cadenaNumeros);
+			segundoNumero = Double.parseDouble(cadenaNumeros);
+			resultado= primerNumero / segundoNumero;
+			labelNumero.setText(String.format("% .2f",resultado));
+			cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
 		}
 		
 		activado=true;
