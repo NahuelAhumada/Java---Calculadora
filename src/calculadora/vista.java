@@ -338,10 +338,15 @@ public class vista extends JFrame {
 		else if(operacion.equals("division")) {
 			labelCuentaRealizada.setText(labelCuentaRealizada.getText() + cadenaNumeros);
 			segundoNumero = Double.parseDouble(cadenaNumeros);
-			resultado= primerNumero / segundoNumero;
-			labelNumero.setText(String.format("% .2f",resultado));
-			cadenaNumeros = String.valueOf(resultado);
-            operacion = "nula";
+			if(segundoNumero == 0) {
+				labelNumero.setText("No divida por 0");
+			}else {
+				resultado= primerNumero / segundoNumero;
+				labelNumero.setText(String.format("% .2f",resultado));
+				cadenaNumeros = String.valueOf(resultado);
+	            operacion = "nula";
+			}
+			
 		}
 		
 		activado=true;
