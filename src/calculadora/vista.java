@@ -105,6 +105,7 @@ public class vista extends JFrame {
 					resultado = Math.sqrt(primerNumero);
 					labelNumero.setText(String.format("%.2f", resultado));
 					cadenaNumeros = String.valueOf(resultado);
+					punto=true;
 				}
 			}
 		});
@@ -121,6 +122,7 @@ public class vista extends JFrame {
 					cadenaNumeros = "";
 					operacion = "division";
 					activado=false;
+					punto=true;
 				}
 			}
 		});
@@ -173,6 +175,7 @@ public class vista extends JFrame {
 					cadenaNumeros = "";
 					operacion = "multiplicacion";
 					activado=false;
+					punto=true;
 				}
 			}
 		});
@@ -222,6 +225,7 @@ public class vista extends JFrame {
 					cadenaNumeros = "";
 					operacion = "resta";
 					activado=false;
+					punto=true;
 				}
 			}
 		});
@@ -270,6 +274,7 @@ public class vista extends JFrame {
 					cadenaNumeros = "";
 					operacion = "suma";
 					activado=false;
+					punto=true;
 				}
 			}
 		});
@@ -291,7 +296,21 @@ public class vista extends JFrame {
 		});
 		panel.add(boton0);
 		
+		//Boton de punto (.)
 		JButton botonPunto = new JButton(".");
+		botonPunto.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(punto) {
+					if(cadenaNumeros.equals("")) {
+						cadenaNumeros = "0.";
+					}else {
+						cadenaNumeros += ".";
+					}
+					labelNumero.setText(cadenaNumeros);
+					punto=false;
+				}
+			}
+		});
 		botonPunto.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(botonPunto);
 		
@@ -355,8 +374,8 @@ public class vista extends JFrame {
 			}
 			
 		}
-		
 		activado=true;
+		punto=true;
 	}
 	
 }
