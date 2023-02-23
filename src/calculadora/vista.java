@@ -22,6 +22,9 @@ public class vista extends JFrame {
 	private double primerNumero, resultado;
 	private boolean activado = true;
 	private boolean punto = true; 
+	//Variables Label
+	JLabel labelNumero;
+	JLabel labelCuentaRealizada;
 	/**
 	 * Launch the application.
 	 */
@@ -74,13 +77,13 @@ public class vista extends JFrame {
 		panel.setLayout(new GridLayout(5, 4, 0, 0));
 		
 		//label para mostrar los numeros que se van escribiendo y el resultado de la cuenta
-		JLabel labelNumero = new JLabel("0");
+		labelNumero = new JLabel("0");
 		labelNumero.setFont(new Font("Tahoma", Font.PLAIN, 36));
 		labelNumero.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelNumero.setBounds(0, 35, 296, 70);
 		contentPane.add(labelNumero);
 		//label para mostra la cuenta una vez que se realiza
-		JLabel labelCuentaRealizada = new JLabel("");
+		labelCuentaRealizada = new JLabel("");
 		labelCuentaRealizada.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelCuentaRealizada.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		labelCuentaRealizada.setBounds(0, 0, 296, 40);
@@ -281,7 +284,18 @@ public class vista extends JFrame {
 		botonSuma.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(botonSuma);
 		
+		//Boton mas menos +/- para cambio de signo
 		JButton botonMasMenos = new JButton("+/-");
+		botonMasMenos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(cadenaNumeros.charAt(0) != '-') {
+					cadenaNumeros = "-" + cadenaNumeros;
+				}else {
+					cadenaNumeros = cadenaNumeros.substring(1, cadenaNumeros.length());
+				}
+				labelNumero.setText(cadenaNumeros);
+			}
+		});
 		botonMasMenos.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(botonMasMenos);
 		
