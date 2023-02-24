@@ -147,10 +147,13 @@ public class vista extends JFrame {
 					if (tamanio == 1) {
 						cadenaNumeros = "0";
 					}else {
+						if(cadenaNumeros.charAt(tamanio-1)== '.') {
+							punto=true;
+						}
 						cadenaNumeros=cadenaNumeros.substring(0, tamanio -1);
 					}
+					labelNumero.setText(cadenaNumeros);
 				}
-				labelNumero.setText(cadenaNumeros);
 			}
 		});
 		botonCE.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -292,7 +295,7 @@ public class vista extends JFrame {
 		JButton botonSuma = new JButton("+");
 		botonSuma.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(activado) {
+				if(activado && !cadenaNumeros.equals("")) {
 					primerNumero = Double.parseDouble(cadenaNumeros);
 					labelCuentaRealizada.setText(cadenaNumeros + " + ");
 					cadenaNumeros = "";
