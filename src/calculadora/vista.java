@@ -20,6 +20,7 @@ public class vista extends JFrame {
 	private String cadenaNumeros = "";
 	private String operacion = "nula";
 	private double primerNumero, resultado;
+	private boolean operacionRealizada = false;
 	private boolean activado = true;
 	private boolean punto = true; 
 	//Variables Label
@@ -116,6 +117,7 @@ public class vista extends JFrame {
 					labelNumero.setText(String.format("%.2f", resultado));
 					cadenaNumeros = String.valueOf(resultado);
 					punto=true;
+					operacionRealizada=true;
 				}
 			}
 		});
@@ -344,16 +346,18 @@ public class vista extends JFrame {
 			this.operacion = operacion;
 			activado=false;
 			punto=true;
+			operacionRealizada=true;
 		}
 	}
 	private void agregarNumero(JLabel labelNumero, Integer numero) {
-		if(labelNumero.getText().equals("0")) {
+		if(labelNumero.getText().equals("0") || operacionRealizada) {
 			cadenaNumeros = numero.toString();
 		}else {
 			cadenaNumeros += numero.toString();
 		}
 		labelNumero.setText(cadenaNumeros);
 		activado=true;
+		operacionRealizada=false;
 	}
 	private void botonIgualActionPerformed(JLabel labelNumero, JLabel labelCuentaRealizada) {
 		double segundoNumero;
@@ -391,11 +395,11 @@ public class vista extends JFrame {
 				labelNumero.setText(String.format("% .2f",resultado));
 				cadenaNumeros = String.valueOf(resultado);
 	            operacion = "nula";
-			}
-			
+			}	
 		}
 		activado=true;
 		punto=true;
+		operacionRealizada=true;
 	}
 	
 }
