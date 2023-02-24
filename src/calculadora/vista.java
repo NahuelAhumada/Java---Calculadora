@@ -131,7 +131,18 @@ public class vista extends JFrame {
 		});
 		panel.add(botonDivision);
 		
+		//Boton de cleaner (CE)
 		JButton botonCE = new JButton("CE");
+		botonCE.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				labelCuentaRealizada.setText("");
+				labelNumero.setText("0");
+				cadenaNumeros = "";
+				operacion = "nula";
+				activado = true;
+				punto = true;
+			}
+		});
 		botonCE.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(botonCE);
 		
