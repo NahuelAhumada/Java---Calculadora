@@ -89,10 +89,17 @@ public class vista extends JFrame {
 		labelCuentaRealizada.setBounds(0, 0, 296, 40);
 		contentPane.add(labelCuentaRealizada);
 		
+		//Boton de cleaner (CE)
 		JButton botonC = new JButton("C");
 		botonC.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		botonC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				labelCuentaRealizada.setText("");
+				labelNumero.setText("0");
+				cadenaNumeros = "";
+				operacion = "nula";
+				activado = true;
+				punto = true;
 			}
 		});
 		panel.add(botonC);
@@ -131,16 +138,11 @@ public class vista extends JFrame {
 		});
 		panel.add(botonDivision);
 		
-		//Boton de cleaner (CE)
-		JButton botonCE = new JButton("CE");
+		//Boton 
+		JButton botonCE = new JButton("<-");
 		botonCE.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				labelCuentaRealizada.setText("");
-				labelNumero.setText("0");
-				cadenaNumeros = "";
-				operacion = "nula";
-				activado = true;
-				punto = true;
+				
 			}
 		});
 		botonCE.setFont(new Font("Tahoma", Font.PLAIN, 18));
