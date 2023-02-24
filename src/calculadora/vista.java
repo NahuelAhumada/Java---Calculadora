@@ -126,14 +126,7 @@ public class vista extends JFrame {
 		botonDivision.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		botonDivision.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(activado) {
-					primerNumero = Double.parseDouble(cadenaNumeros);
-					labelCuentaRealizada.setText(cadenaNumeros + " \u00F7 ");
-					cadenaNumeros = "";
-					operacion = "division";
-					activado=false;
-					punto=true;
-				}
+				funcionAritmetica('\u00F7', "division");
 			}
 		});
 		panel.add(botonDivision);
@@ -196,14 +189,7 @@ public class vista extends JFrame {
 		botonMultiplicacion.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		botonMultiplicacion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(activado) {
-					primerNumero = Double.parseDouble(cadenaNumeros);
-					labelCuentaRealizada.setText(cadenaNumeros + " X ");
-					cadenaNumeros = "";
-					operacion = "multiplicacion";
-					activado=false;
-					punto=true;
-				}
+				funcionAritmetica('X', "multiplicacion");
 			}
 		});
 		panel.add(botonMultiplicacion);
@@ -246,14 +232,7 @@ public class vista extends JFrame {
 		botonResta.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		botonResta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(activado) {
-					primerNumero = Double.parseDouble(cadenaNumeros);
-					labelCuentaRealizada.setText(cadenaNumeros + " - ");
-					cadenaNumeros = "";
-					operacion = "resta";
-					activado=false;
-					punto=true;
-				}
+				funcionAritmetica('-', "resta");
 			}
 		});
 		panel.add(botonResta);
@@ -295,14 +274,7 @@ public class vista extends JFrame {
 		JButton botonSuma = new JButton("+");
 		botonSuma.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(activado && !cadenaNumeros.equals("")) {
-					primerNumero = Double.parseDouble(cadenaNumeros);
-					labelCuentaRealizada.setText(cadenaNumeros + " + ");
-					cadenaNumeros = "";
-					operacion = "suma";
-					activado=false;
-					punto=true;
-				}
+				funcionAritmetica('+', "suma");
 			}
 		});
 		botonSuma.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -363,6 +335,16 @@ public class vista extends JFrame {
 		panel.add(botonIgual);
 		
 		
+	}
+	private void funcionAritmetica(char signo, String operacion) {
+		if(activado && !cadenaNumeros.equals("")) {
+			primerNumero = Double.parseDouble(cadenaNumeros);
+			labelCuentaRealizada.setText(cadenaNumeros + signo);
+			cadenaNumeros = "";
+			this.operacion = operacion;
+			activado=false;
+			punto=true;
+		}
 	}
 	private void agregarNumero(JLabel labelNumero, Integer numero) {
 		if(labelNumero.getText().equals("0")) {
