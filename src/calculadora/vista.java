@@ -89,7 +89,7 @@ public class vista extends JFrame {
 		labelCuentaRealizada.setBounds(0, 0, 296, 40);
 		contentPane.add(labelCuentaRealizada);
 		
-		//Boton de cleaner (CE)
+		//Boton de cleaner (C)
 		JButton botonC = new JButton("C");
 		botonC.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		botonC.addActionListener(new ActionListener() {
@@ -138,11 +138,19 @@ public class vista extends JFrame {
 		});
 		panel.add(botonDivision);
 		
-		//Boton 
+		//Boton de borrado a la izquierda (<-)
 		JButton botonCE = new JButton("<-");
 		botonCE.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				int tamanio = cadenaNumeros.length(); 
+				if(tamanio > 0) {
+					if (tamanio == 1) {
+						cadenaNumeros = "0";
+					}else {
+						cadenaNumeros=cadenaNumeros.substring(0, tamanio -1);
+					}
+				}
+				labelNumero.setText(cadenaNumeros);
 			}
 		});
 		botonCE.setFont(new Font("Tahoma", Font.PLAIN, 18));
