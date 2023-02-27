@@ -346,12 +346,15 @@ public class vista extends JFrame {
 			this.operacion = operacion;
 			activado=false;
 			punto=true;
-			operacionRealizada=true;
+			operacionRealizada=false;
 		}
 	}
 	private void agregarNumero(JLabel labelNumero, Integer numero) {
 		if(labelNumero.getText().equals("0") || operacionRealizada) {
 			cadenaNumeros = numero.toString();
+			if(operacionRealizada) {
+				labelCuentaRealizada.setText("");
+			}
 		}else {
 			cadenaNumeros += numero.toString();
 		}
